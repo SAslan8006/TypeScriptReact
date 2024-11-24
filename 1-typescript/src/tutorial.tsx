@@ -71,10 +71,10 @@ let myStr: string = myIceCream1[0];
 console.log(myStr);
 
 //Anonim işlevler
-function addNumbers(x: number, y: number): number {
-  return x + y;
-}
-addNumbers(1, 2);
+// function addNumbers(x: number, y: number): number {
+//   return x + y;
+// }
+// addNumbers(1, 2);
 
 const sum = function (input: number[]): number {
   let total: number = 0;
@@ -94,15 +94,12 @@ function displayAlert(message: string | number) {
 }
 
 displayAlert("Hello");
-
 function addNumbers(x: number, y: number): number {
   return x + y;
 }
-
 addNumbers(1, 2); // Returns 3
-//addNumbers(1);    // Returns an error
 
-let addAllNumbers = (
+const addAllNumb1 = (
   firstNumber: number,
   ...restOfNumbers: number[]
 ): number => {
@@ -116,6 +113,6 @@ let addAllNumbers = (
   return total;
 };
 
-addAllNumbers(1, 2, 3, 4, 5, 6, 7); // returns 28
-addAllNumbers(2); // returns 2
-addAllNumbers(2, 3, "three"); // flags error due to data type at design time, returns 5
+console.log(addAllNumb1(1, 2, 3, 4, 5, 6, 7)); // returns 28
+addAllNumb1(2); // returns 2
+// addAllNumbers(2, 3, "three"); // flags error due to data type at design time, returns 5
