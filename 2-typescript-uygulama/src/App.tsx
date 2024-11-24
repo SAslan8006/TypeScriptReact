@@ -1,5 +1,6 @@
 import "./App.css";
-import Tuple from "./TypeScript/Tuple";
+import Fonksiyonlar from "./TypeScript/Fonksiyonlar";
+// import Tuple from "./TypeScript/Tuple";
 // import Arrays from "./TypeScript/Arrays";
 // import Objects from "./TypeScript/Objects";
 // import Literal from "./TypeScript/Literal";
@@ -13,7 +14,8 @@ function App() {
       {/* <Literal /> */}
       {/* <Objects /> */}
       {/* <Arrays /> */}
-      <Tuple />
+      {/* <Tuple /> */}
+      <Fonksiyonlar />
     </>
   );
 }
