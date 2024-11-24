@@ -39,3 +39,39 @@ let prices: (string | number)[] = [1, 2, 3];
 prices = ["$1", "$2", "$3", 2 * 2];
 
 console.log(prices);
+
+interface IceCream {
+  flavor?: string;
+  scoops: number;
+}
+
+const vanillaIceCream: IceCream = {
+  scoops: 2,
+};
+
+console.log(vanillaIceCream);
+
+function tooManyScoops(dessert: IceCream) {
+  if (dessert.scoops >= 4) {
+    return dessert.scoops + " is too many scoops!";
+  } else {
+    return "Your order will be ready soon!";
+  }
+}
+
+console.log(tooManyScoops({ flavor: "vanilla", scoops: 5 }));
+
+interface IceCreamArray {
+  [index: number]: string;
+}
+
+let myIceCream1: IceCreamArray;
+myIceCream1 = ["chocolate", "vanilla", "strawberry"];
+let myStr: string = myIceCream1[0];
+console.log(myStr);
+
+//Anonim işlevler
+function addNumbers(x: number, y: number): number {
+  return x + y;
+}
+addNumbers(1, 2);
