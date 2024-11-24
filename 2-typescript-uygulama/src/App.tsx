@@ -1,9 +1,11 @@
 import "./App.css";
-import AnyUnknownType from "./TypeScript/AnyUnknownType";
+// import Union from "./TypeScript/Union";
+// import AnyUnknownType from "./TypeScript/AnyUnknownType";
 function App() {
   return (
     <>
-      <AnyUnknownType />
+      {/* <AnyUnknownType /> */}
+      {/* <Union /> */}
     </>
   );
 }
