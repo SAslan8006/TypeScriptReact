@@ -116,3 +116,32 @@ const addAllNumb1 = (
 console.log(addAllNumb1(1, 2, 3, 4, 5, 6, 7)); // returns 28
 addAllNumb1(2); // returns 2
 // addAllNumbers(2, 3, "three"); // flags error due to data type at design time, returns 5
+
+export interface User {
+  name: string;
+  id: number;
+}
+
+export type Theme = "light" | "dark";
+
+export interface UserAdmin extends User {
+  role: "admin";
+}
+
+export const user: User = {
+  name: "susan",
+  id: 1,
+};
+
+export const userAdmin: UserAdmin = {
+  name: "susan",
+  id: 1,
+  role: "admin",
+};
+
+console.log(user, userAdmin);
+
+const awesomeName: string = "shakeAndBake";
+const awesomeName2: number = 1; // awesomeName = 20;
+
+console.log(awesomeName, awesomeName2);
