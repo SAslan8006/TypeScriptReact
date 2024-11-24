@@ -1,5 +1,6 @@
 import "./App.css";
-import Arrays from "./TypeScript/Arrays";
+import Tuple from "./TypeScript/Tuple";
+// import Arrays from "./TypeScript/Arrays";
 // import Objects from "./TypeScript/Objects";
 // import Literal from "./TypeScript/Literal";
 // import Union from "./TypeScript/Union";
@@ -11,7 +12,8 @@ function App() {
       {/* <Union /> */}
       {/* <Literal /> */}
       {/* <Objects /> */}
-      <Arrays />
+      {/* <Arrays /> */}
+      <Tuple />
     </>
   );
 }
