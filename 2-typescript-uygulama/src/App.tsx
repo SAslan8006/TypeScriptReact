@@ -1,5 +1,6 @@
 import "./App.css";
-import Objects from "./TypeScript/Objects";
+import Arrays from "./TypeScript/Arrays";
+// import Objects from "./TypeScript/Objects";
 // import Literal from "./TypeScript/Literal";
 // import Union from "./TypeScript/Union";
 // import AnyUnknownType from "./TypeScript/AnyUnknownType";
@@ -9,7 +10,8 @@ function App() {
       {/* <AnyUnknownType /> */}
       {/* <Union /> */}
       {/* <Literal /> */}
-      <Objects />
+      {/* <Objects /> */}
+      <Arrays />
     </>
   );
 }
