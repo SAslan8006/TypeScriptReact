@@ -97,3 +97,33 @@ function sum(message: string, ...numbers: number[]): string {
 
 const result221 = sum("The total is:", 1, 2, 3, 4, 5);
 console.log(result221); // Output: "The total is: 15"
+
+function createStudent(student: { id: number; name: string }) {
+  console.log(`Welcome to the course ${student.name.toUpperCase()}!!!`);
+}
+
+const newStudent = {
+  id: 5,
+  name: "anna",
+  email: "anna@gmail.com",
+};
+
+createStudent(newStudent);
+createStudent({ id: 1, name: "bob", email: "bob@gmail.com" });
+
+function processData(
+  input: string | number,
+  config: { reverse: boolean } = { reverse: false }
+): string | number {
+  if (typeof input === "number") {
+    return input * input;
+  } else {
+    return config.reverse
+      ? input.toUpperCase().split("").reverse().join("")
+      : input.toUpperCase();
+  }
+}
+
+console.log(processData(10)); // Output: 100
+console.log(processData("Hello")); // Output: HELLO
+console.log(processData("Hello", { reverse: true })); // Output: OLLEH
