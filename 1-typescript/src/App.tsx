@@ -1,6 +1,7 @@
 import "./App.css";
 // import Course from "./Course";
 import Fonksiyonlar from "./Fonksiyonlar";
+import Intersection from "./Intersection";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
@@ -19,13 +20,14 @@ function App() {
       {/* <Interfacetutorial /> */}
       {/* <GenelTürler /> */}
       {/* <Course /> */}
-      <Fonksiyonlar />
+      {/* <Fonksiyonlar /> */}
       {/* <Person
         name="John"
         age={30}
         isMarried={true}
         country={Countries.Turkiye}
       /> */}
+      <Intersection />
     </>
   );
 }
