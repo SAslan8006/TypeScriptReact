@@ -29,3 +29,16 @@ const items: { readonly title: string; cost?: number }[] = [
 items[0].title = "new book"; // Error: Cannot assign to 'title' because it is a read-only property
 
 console.log(items);
+
+type ItemType1 = {
+  title: string;
+  cost?: number; // Opsiyonel bir özellik
+};
+
+const items1: ItemType1[] = [
+  { title: "book", cost: 15 },
+  { title: "pen", cost: 2 },
+  { title: "notebook", cost: 10 },
+];
+
+console.log(items1);
