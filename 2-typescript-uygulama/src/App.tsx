@@ -1,6 +1,7 @@
 import "./App.css";
+import Interface from "./TypeScript/Interface";
 // import OptionalParams from "./TypeScript/OptionalParams";
-import Type from "./TypeScript/Type";
+// import Type from "./TypeScript/Type";
 // import Fonksiyonlar from "./TypeScript/Fonksiyonlar";
 // import Tuple from "./TypeScript/Tuple";
 // import Arrays from "./TypeScript/Arrays";
@@ -19,7 +20,8 @@ function App() {
       {/* <Tuple /> */}
       {/* <Fonksiyonlar /> */}
       {/* <OptionalParams /> */}
-      <Type />
+      {/* <Type /> */}
+      <Interface />
     </>
   );
 }
