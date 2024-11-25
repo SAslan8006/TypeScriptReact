@@ -1,4 +1,5 @@
 import "./App.css";
+import Props from "./TypeScript/Props";
 // import Generics from "./TypeScript/Generics";
 // import Mappedtypes from "./TypeScript/Mappedtypes";
 // import Modueller from "./TypeScript/Modueller";
@@ -30,6 +31,7 @@ function App() {
       {/* <Generics /> */}
       {/* <Modueller /> */}
       {/* <Mappedtypes /> */}
+      <Props />
     </>
   );
 }
