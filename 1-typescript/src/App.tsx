@@ -1,5 +1,6 @@
 import "./App.css";
-import GenelTürler from "./GenelTürler";
+import Course from "./Course";
+// import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
 // import BuilArray from "./BuilArray";
 // import Counter from "./counter";
@@ -14,7 +15,8 @@ function App() {
       {/* <Counter /> */}
       {/* <SinifBildirme /> */}
       {/* <Interfacetutorial /> */}
-      <GenelTürler />
+      {/* <GenelTürler /> */}
+      <Course />
     </>
   );
 }
