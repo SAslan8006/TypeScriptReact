@@ -1,6 +1,7 @@
 import "./App.css";
-import Generics from "./TypeScript/Generics";
-import Modueller from "./TypeScript/Modueller";
+// import Generics from "./TypeScript/Generics";
+// import Mappedtypes from "./TypeScript/Mappedtypes";
+// import Modueller from "./TypeScript/Modueller";
 // import Readonly from "./TypeScript/Readonly";
 // import Interface from "./TypeScript/Interface";
 // import OptionalParams from "./TypeScript/OptionalParams";
@@ -27,7 +28,8 @@ function App() {
       {/* <Interface /> */}
       {/* <Readonly /> */}
       {/* <Generics /> */}
-      <Modueller />
+      {/* <Modueller /> */}
+      {/* <Mappedtypes /> */}
     </>
   );
 }
