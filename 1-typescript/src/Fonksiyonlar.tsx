@@ -88,7 +88,7 @@ function sum(message: string, ...numbers: number[]): string {
   console.log("Doubled numbers:", doubled); // Output: [2, 4, 6, 8, 10]
 
   // Sayıları toplamak
-  let total = numbers.reduce((previous, current) => {
+  let total: number = numbers.reduce((previous, current) => {
     return previous + current;
   }, 0);
 
