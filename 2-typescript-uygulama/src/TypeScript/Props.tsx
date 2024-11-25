@@ -1,7 +1,11 @@
 import React from "react";
 
 function Props() {
-  return <div>Props</div>;
+  return (
+    <div>
+      <Character name="ahmet" surname="fatih" />
+    </div>
+  );
 }
 
 export default Props;
@@ -37,5 +41,3 @@ const Character1: React.FC<PropTypes> = (props) => {
     </div>
   );
 };
-
-console.log(Character1({ name: "ahmet", surname: "fatih" }));
