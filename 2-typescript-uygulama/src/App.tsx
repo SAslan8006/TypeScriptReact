@@ -1,5 +1,5 @@
 import "./App.css";
-import OptionalParams from "./TypeScript/OptionalParams";
+// import OptionalParams from "./TypeScript/OptionalParams";
 import Type from "./TypeScript/Type";
 // import Fonksiyonlar from "./TypeScript/Fonksiyonlar";
 // import Tuple from "./TypeScript/Tuple";
