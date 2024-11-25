@@ -1,5 +1,6 @@
 import "./App.css";
-import Interface from "./TypeScript/Interface";
+import Readonly from "./TypeScript/Readonly";
+// import Interface from "./TypeScript/Interface";
 // import OptionalParams from "./TypeScript/OptionalParams";
 // import Type from "./TypeScript/Type";
 // import Fonksiyonlar from "./TypeScript/Fonksiyonlar";
@@ -21,7 +22,8 @@ function App() {
       {/* <Fonksiyonlar /> */}
       {/* <OptionalParams /> */}
       {/* <Type /> */}
-      <Interface />
+      {/* <Interface /> */}
+      <Readonly />
     </>
   );
 }
