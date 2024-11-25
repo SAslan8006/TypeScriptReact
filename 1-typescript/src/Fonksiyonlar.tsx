@@ -56,3 +56,44 @@ if (isNameInList(nameToCheck)) {
 } else {
   console.log(`${nameToCheck} is not in the list.`);
 }
+
+function calculatePrice(price: number, discount?: number): number {
+  return price - (discount || 0);
+}
+
+const priceAfterDiscount: number = calculatePrice(100, 20);
+console.log(priceAfterDiscount); // Output: 80
+
+const priceWithoutDiscount: number = calculatePrice(300);
+console.log(priceWithoutDiscount); // Output: 300
+function calculateScoreWithPenalty(
+  initialScore: number,
+  penaltyPoints: number = 0
+): number {
+  return initialScore - penaltyPoints;
+}
+
+function calculateScoreWithoutPenalty(baseScore: number): number {
+  return baseScore;
+}
+
+const scoreAfterPenalty: number = calculateScoreWithPenalty(100, 20);
+console.log(scoreAfterPenalty); // Output: 80
+
+const scoreWithoutPenalty: number = calculateScoreWithoutPenalty(300);
+console.log(scoreWithoutPenalty); // Output: 300
+function sum(message: string, ...numbers: number[]): string {
+  // Sayıları ikiyle çarpıp yazdırmak
+  const doubled = numbers.map((num) => num * 2);
+  console.log("Doubled numbers:", doubled); // Output: [2, 4, 6, 8, 10]
+
+  // Sayıları toplamak
+  let total = numbers.reduce((previous, current) => {
+    return previous + current;
+  }, 0);
+
+  return `${message} ${total}`; // "The total is: 15"
+}
+
+const result221 = sum("The total is:", 1, 2, 3, 4, 5);
+console.log(result221); // Output: "The total is: 15"

@@ -1,7 +1,7 @@
 import "./App.css";
 // import Course from "./Course";
-// import Fonksiyonlar from "./Fonksiyonlar";
-import Person, { Countries } from "./Person";
+import Fonksiyonlar from "./Fonksiyonlar";
+// import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
 // import BuilArray from "./BuilArray";
@@ -19,13 +19,13 @@ function App() {
       {/* <Interfacetutorial /> */}
       {/* <GenelTürler /> */}
       {/* <Course /> */}
-      {/* <Fonksiyonlar /> */}
-      <Person
+      <Fonksiyonlar />
+      {/* <Person
         name="John"
         age={30}
         isMarried={true}
         country={Countries.Turkiye}
-      />
+      /> */}
     </>
   );
 }
