@@ -3,7 +3,9 @@ import "./App.css";
 import Fonksiyonlar from "./Fonksiyonlar";
 import InterfacevsType from "./InterfacevsType";
 import Intersection from "./Intersection";
+import Never from "./Never";
 import Tuples from "./Tuples";
+import Unknown from "./Unknown";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
@@ -31,7 +33,9 @@ function App() {
       /> */}
       {/* <Intersection /> */}
       {/* <InterfacevsType /> */}
-      <Tuples />
+      {/* <Tuples /> */}
+      {/* <Never /> */}
+      <Unknown />
     </>
   );
 }
