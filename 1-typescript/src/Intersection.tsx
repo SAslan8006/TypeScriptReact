@@ -6,6 +6,24 @@ function Intersection() {
 
 export default Intersection;
 
+type Employee = { id: number; name: string; department: string };
+type Manager = { id: number; name: string; employees: Employee[] };
+
+const alice: Employee = { id: 1, name: "Alice", department: "Sales" };
+const steve: Employee = { id: 1, name: "Steve", department: "HR" };
+
+const bob: Manager = { id: 1, name: "Bob", employees: [alice, steve] };
+
+type Staff = Employee | Manager;
+const staff: Staff = bob; // Error: Type 'Manager' is not assignable to type '
+printStaffDetails(staff);
+function printStaffDetails(staff: Staff): void {
+  if ("employees" in staff) {
+    console.log("Yönetici: " + staff.name);
+  }
+}
+
+console.log(bob);
 // Tür Tanımlamaları
 type Book = { id: number; name: string; price: number };
 type DiscountedBook = Book & { discount: number };
@@ -78,9 +96,35 @@ const deepWork2: Book3 = {
     console.log(this.author);
   },
   printTitle(message) {
-    return `${this.title} ${message }`;
+    return `${this.title} ${message}`;
   },
 };
 deepWork2.printAuthor();
 const result = deepWork2.printTitle("is an awesome book");
 console.log(result);
+
+interface Bookc {
+  readonly isbn: number;
+  title: string;
+  author: string;
+  genre?: string;
+  // method
+  printAuthor(): void;
+  printTitle(message: string): string;
+}
+
+const deepWorkc: Bookc = {
+  isbn: 9781455586691,
+  title: "Deep Work",
+  author: "Cal Newport",
+  genre: "Self-help",
+  printAuthor() {
+    console.log(this.author);
+  },
+  printTitle(message) {
+    return `${this.title} ${message}`;
+  },
+};
+deepWorkc.printAuthor();
+const resultc = deepWorkc.printTitle("is an awesome book");
+console.log(resultc);
