@@ -10,7 +10,7 @@ export default Never;
 
 type Theme = "light" | "dark";
 
-function checkTheme(theme: Theme) {
+function checkTheme(theme: Theme): void {
   if (theme === "light") {
     console.log("light theme");
     return;
@@ -28,7 +28,7 @@ enum Color {
   // Green,
 }
 
-function getColorName(color: Color) {
+function getColorName(color: Color): string {
   switch (color) {
     case Color.Red:
       return "Red";
