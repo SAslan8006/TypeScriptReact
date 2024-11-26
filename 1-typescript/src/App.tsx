@@ -3,6 +3,7 @@ import "./App.css";
 import Fonksiyonlar from "./Fonksiyonlar";
 import InterfacevsType from "./InterfacevsType";
 import Intersection from "./Intersection";
+import Tuples from "./Tuples";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
@@ -29,7 +30,8 @@ function App() {
         country={Countries.Turkiye}
       /> */}
       {/* <Intersection /> */}
-      <InterfacevsType />
+      {/* <InterfacevsType /> */}
+      <Tuples />
     </>
   );
 }
