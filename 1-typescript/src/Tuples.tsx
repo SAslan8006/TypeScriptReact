@@ -24,7 +24,7 @@ console.log(randomPerson[1]);
 // susan[0] = 'bob';
 // susan.push('some random value');
 
-let susan: readonly [string, number] = ["susan", 25];
+const susan: readonly [string, number] = ["susan", 25];
 // susan[0] = 'bob';
 // susan.push('some random value');
 console.log(susan);
