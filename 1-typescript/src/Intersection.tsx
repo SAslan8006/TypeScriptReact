@@ -175,3 +175,92 @@ console.log(deepWorkd.printSomething(34));
 deepWorkd.printAuthor();
 const resultd = deepWorkd.printTitle("is an awesome book");
 console.log(resultd);
+
+interface Computer {
+  readonly id: number; // cannot be changed once initialized
+  brand: string;
+  ram: number;
+  upgradeRam(increase: number): number;
+  storage?: number; // optional property
+}
+
+const laptop: Computer = {
+  id: 1,
+  brand: "random brand",
+  ram: 8, // in GB
+  upgradeRam(amount: number) {
+    this.ram += amount;
+    return this.ram;
+  },
+};
+
+laptop.storage = 256; // assigning value to optional property
+
+console.log(laptop.upgradeRam(4)); // upgrades RAM by 4GB
+console.log(laptop);
+
+interface Person {
+  name: string;
+  getDetails(): string;
+}
+
+interface DogOwner {
+  dogName: string;
+  getDogDetails(): string;
+}
+
+// Merging (reopening) an interface in TypeScript is a process where you declare an interface with the same name more than once, and TypeScript will merge their members.
+
+// Merging the interface
+interface Persond {
+  age: number;
+  name: string;
+  getDetails(): string;
+}
+
+// Usage
+const persond: Persond = {
+  name: "John",
+  age: 30,
+  getDetails() {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  },
+};
+
+// Extending an interface in TypeScript is a way to create a new interface that inherits the properties and methods of an existing interface. You use the extends keyword to do this. When you extend an interface, the new interface will have all the members of the base interface, plus any new members that you add.
+
+// Extending the interface
+interface Employeed extends Persond {
+  employeeId: number;
+}
+
+const employee: Employeed = {
+  name: "jane",
+  age: 28,
+  employeeId: 123,
+  getDetails() {
+    return `Name: ${this.name}, Age: ${this.age}, Employee ID: ${this.employeeId}`;
+  },
+};
+
+// Interface multiple inheritance
+interface Managerd extends Persond, DogOwner {
+  managePeople(): void;
+}
+
+const manager: Managerd = {
+  name: "Bob",
+  age: 35,
+  dogName: "Rex",
+  getDetails() {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  },
+  getDogDetails() {
+    return `Dog Name: ${this.dogName}`;
+  },
+  managePeople() {
+    console.log("Managing people...");
+  },
+};
+
+console.log(manager);
