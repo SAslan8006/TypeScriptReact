@@ -77,21 +77,84 @@ enum StringEnum {
   Member = "Value",
 }
 
-let numericEnumValue: NumericEnum = 1; // This is allowed
+const numericEnumValue: NumericEnum = 1; // This is allowed
 console.log(numericEnumValue); // 1
 
-let stringEnumValue: StringEnum = "Value"; // This is not allowed
+const stringEnumValue: StringEnum = "Value"; // This is not allowed
 
 enum ServerResponseStatus4 {
   Success = "Success",
   Error = "Error",
 }
 
-function getServerResponse2(): ServerResponse3 {
-  return {
-    // result: ServerResponseStatus4.Success,
-    // this will not fly with string enum but ok with number
-    result: "Success",
-    data: ["first item", "second item"],
-  };
+// Define an enum named UserRole
+enum UserRole {
+  Admin,
+  Manager,
+  Employee,
 }
+
+// Define a type alias named User
+type User = {
+  id: number;
+  name: string;
+  role: UserRole;
+  contact: [string, string]; // Tuple: [email, phone]
+};
+
+// Define a function named createUser
+function createUser(user: User): User {
+  return user;
+}
+
+// Call the createUser function
+const user: User = createUser({
+  id: 1,
+  name: "John Doe",
+  role: UserRole.Admin,
+  contact: ["john.doe@example.com", "123-456-7890"],
+});
+
+console.log(user);
+
+let someValue: any = "This is a string";
+
+// Using type assertion to treat 'someValue' as a string
+let strLength: number = (someValue as string).length;
+
+type Bird = {
+  name: string;
+};
+
+// Assume we have a JSON string from an API or local file
+let birdString = '{"name": "Eagle"}';
+let dogString = '{"breed": "Poodle"}';
+
+//
+
+// Parse the JSON string into an object
+let birdObject = JSON.parse(birdString);
+let dogObject = JSON.parse(dogString);
+
+// We're sure that the jsonObject is actually a Bird
+let bird = birdObject as Bird;
+let dog = dogObject as Bird;
+
+console.log(bird.name);
+console.log(dog.name);
+
+enum Status {
+  Pending = "pending",
+  Declined = "declined",
+}
+
+type Usera = {
+  name: string;
+  status: Status;
+};
+// save Status.Pending in the DB as a string
+// retrieve string from the DB
+const statusValue = "pending";
+
+const userada: Usera = { name: "john", status: statusValue as Status };
+console.log(userada);
