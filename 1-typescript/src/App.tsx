@@ -1,6 +1,7 @@
 import "./App.css";
 // import Course from "./Course";
 import Fonksiyonlar from "./Fonksiyonlar";
+import InterfacevsType from "./InterfacevsType";
 import Intersection from "./Intersection";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
@@ -27,7 +28,8 @@ function App() {
         isMarried={true}
         country={Countries.Turkiye}
       /> */}
-      <Intersection />
+      {/* <Intersection /> */}
+      <InterfacevsType />
     </>
   );
 }
