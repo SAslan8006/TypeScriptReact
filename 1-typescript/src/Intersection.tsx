@@ -232,6 +232,7 @@ const persond: Persond = {
 // Extending the interface
 interface Employeed extends Persond {
   employeeId: number;
+  delegateTasks(): string;
 }
 
 const employee: Employeed = {
@@ -240,6 +241,9 @@ const employee: Employeed = {
   employeeId: 123,
   getDetails() {
     return `Name: ${this.name}, Age: ${this.age}, Employee ID: ${this.employeeId}`;
+  },
+  delegateTasks() {
+    return "Delegate tasks to team members";
   },
 };
 
@@ -264,3 +268,15 @@ const manager: Managerd = {
 };
 
 console.log(manager);
+
+// function isManager(obj: Person | DogOwner | Manager): boolean {
+//   return 'managePeople' in obj;
+// }
+
+function isManager(obj: Person | DogOwner | Manager): obj is Manager {
+  return "managePeople" in obj;
+}
+
+if (isManager(employee)) {
+  employee.delegateTasks();
+}
