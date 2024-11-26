@@ -78,7 +78,7 @@ const deepWork2: Book3 = {
     console.log(this.author);
   },
   printTitle(message) {
-    return `${this.title} ${message}`;
+    return `${this.title} ${message }`;
   },
 };
 deepWork2.printAuthor();
