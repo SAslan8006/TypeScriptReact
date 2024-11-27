@@ -1,13 +1,14 @@
 import "./App.css";
 // import Course from "./Course";
-import Fonksiyonlar from "./types/Fonksiyonlar";
-import Gotcha from "./types/Gotcha";
-import InterfacevsType from "./types/InterfacevsType";
-import Intersection from "./types/Intersection";
-import Never from "./types/Never";
-import Tuples from "./types/Tuples";
-import Typeof from "./types/Typeof";
-import Unknown from "./types/Unknown";
+// import Fonksiyonlar from "./types/Fonksiyonlar";
+import GenericsFundamentals from "./types/GenericsFundamentals";
+// import Gotcha from "./types/Gotcha";
+// import InterfacevsType from "./types/InterfacevsType";
+// import Intersection from "./types/Intersection";
+// import Never from "./types/Never";
+// import Tuples from "./types/Tuples";
+// import Typeof from "./types/Typeof";
+// import Unknown from "./types/Unknown";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
@@ -39,7 +40,8 @@ function App() {
       {/* <Never /> */}
       {/* <Unknown /> */}
       {/* <Gotcha /> */}
-      <Typeof />
+      {/* <Typeof /> */}
+      <GenericsFundamentals />
     </>
   );
 }
