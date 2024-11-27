@@ -1,7 +1,8 @@
 import "./App.css";
+import FetchData from "./types/fetchData";
 // import Course from "./Course";
 // import Fonksiyonlar from "./types/Fonksiyonlar";
-import GenericsFundamentals from "./types/GenericsFundamentals";
+// import GenericsFundamentals from "./types/GenericsFundamentals";
 // import Gotcha from "./types/Gotcha";
 // import InterfacevsType from "./types/InterfacevsType";
 // import Intersection from "./types/Intersection";
@@ -41,7 +42,9 @@ function App() {
       {/* <Unknown /> */}
       {/* <Gotcha /> */}
       {/* <Typeof /> */}
-      <GenericsFundamentals />
+      {/* <GenericsFundamentals /> */}
+
+      <FetchData />
     </>
   );
 }
