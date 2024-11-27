@@ -6,6 +6,7 @@ import InterfacevsType from "./types/InterfacevsType";
 import Intersection from "./types/Intersection";
 import Never from "./types/Never";
 import Tuples from "./types/Tuples";
+import Typeof from "./types/Typeof";
 import Unknown from "./types/Unknown";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
@@ -37,7 +38,8 @@ function App() {
       {/* <Tuples /> */}
       {/* <Never /> */}
       {/* <Unknown /> */}
-      <Gotcha />
+      {/* <Gotcha /> */}
+      <Typeof />
     </>
   );
 }
