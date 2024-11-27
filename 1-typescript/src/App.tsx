@@ -1,11 +1,12 @@
 import "./App.css";
 // import Course from "./Course";
-import Fonksiyonlar from "./Fonksiyonlar";
-import InterfacevsType from "./InterfacevsType";
-import Intersection from "./Intersection";
-import Never from "./Never";
-import Tuples from "./Tuples";
-import Unknown from "./Unknown";
+import Fonksiyonlar from "./types/Fonksiyonlar";
+import Gotcha from "./types/Gotcha";
+import InterfacevsType from "./types/InterfacevsType";
+import Intersection from "./types/Intersection";
+import Never from "./types/Never";
+import Tuples from "./types/Tuples";
+import Unknown from "./types/Unknown";
 // import Person, { Countries } from "./Person";
 // import GenelTürler from "./GenelTürler";
 // import Tutori from "./tutorial2";
@@ -36,6 +37,7 @@ function App() {
       {/* <Tuples /> */}
       {/* <Never /> */}
       {/* <Unknown /> */}
+      <Gotcha />
     </>
   );
 }
