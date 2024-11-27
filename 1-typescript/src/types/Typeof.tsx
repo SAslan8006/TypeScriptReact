@@ -124,3 +124,85 @@ if (isStudent(person)) {
 } else {
   person.login();
 }
+
+type Student2 = {
+  name: string;
+  study: () => void;
+};
+
+type User2 = {
+  name: string;
+  login: () => void;
+};
+
+type Person2 = Student2 | User2;
+
+const person2: Person2 = {
+  name: "anna",
+  study: () => console.log("Studying"),
+  // login: () => console.log('Logging in'),
+};
+// person;
+function isStudent2(person2: Person2): person2 is Student2 {
+  // return 'study' in person;
+  return (person as Student).study !== undefined;
+}
+
+// Usage
+
+if (isStudent2(person2)) {
+  person2.study(); // This is safe because TypeScript knows that 'person' is a Student.
+} else {
+  // in this case person is type "never"
+  console.log(person2);
+}
+
+type IncrementAction2 = {
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type DecrementAction2 = {
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type Action2 = IncrementAction2 | DecrementAction2;
+
+type IncrementAction1 = {
+  type: "increment";
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type DecrementAction1 = {
+  type: "decrement";
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type Action = IncrementAction1 | DecrementAction1;
+
+function reducer(state: number, action: Action): number {
+  switch (action.type) {
+    case "increment":
+      return state + action.amount;
+    case "decrement":
+      return state - action.amount;
+
+    default:
+      const unexpectedAction: never = action;
+      throw new Error(`Unexpected action: ${unexpectedAction}`);
+  }
+}
+
+const newState = reducer(15, {
+  user: "john",
+  type: "increment",
+  amount: 5,
+  timestamp: 123456,
+});
