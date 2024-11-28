@@ -12,8 +12,7 @@ type Tour = {
 
 async function fetchData1(url: string): Promise<Tour[] | []> {
   try {
-    const response = await fetch(url);
-
+    const response: Response | null = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
