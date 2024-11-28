@@ -1,4 +1,4 @@
-import React from "react";
+import { z } from "zod";
 
 function Zod() {
   return <div>Zod</div>;
@@ -6,7 +6,6 @@ function Zod() {
 
 export default Zod;
 
-import { z } from "zod";
 const url = "https://www.course-api.com/react-tours-project";
 
 const tourSchema = z.object({
@@ -18,9 +17,10 @@ const tourSchema = z.object({
   // somethign: z.string(),
 });
 
-// extract the inferred type
+// Type çıkarımı
 type Tour = z.infer<typeof tourSchema>;
 
+// Veri çekme fonksiyonu
 export async function fetchData(url: string): Promise<Tour[]> {
   try {
     const response = await fetch(url);
@@ -46,7 +46,12 @@ export async function fetchData(url: string): Promise<Tour[]> {
   }
 }
 
-const tours = await fetchData(url);
-tours.map((tour) => {
-  console.log(tour.name);
-});
+// Verileri çekip ekrana yazdırma
+async function displayTours() {
+  const tours = await fetchData(url);
+  tours.map((tour) => {
+    console.log(tour.name);
+  });
+}
+
+displayTours();
