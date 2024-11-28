@@ -17,6 +17,7 @@ import FetchData from "./types/fetchData";
 // import Counter from "./counter";
 // import SinifBildirme from "./sinifBildirme";
 // import Interfacetutorial from "./Interfacetutorial";
+import Zod from "./types/Zod";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
       {/* <Gotcha /> */}
       {/* <Typeof /> */}
       {/* <GenericsFundamentals /> */}
-
+      <Zod />
       <FetchData />
     </>
   );

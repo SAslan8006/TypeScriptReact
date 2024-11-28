@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { fetchData } from "./Zod";
 
 const url = "https://www.course-api.com/react-tours-project";
-
 type Tour = {
   id: string;
   name: string;
