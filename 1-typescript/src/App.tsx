@@ -1,4 +1,5 @@
 import "./App.css";
+import Class from "./types/Class";
 import FetchData from "./types/fetchData";
 // import Course from "./Course";
 // import Fonksiyonlar from "./types/Fonksiyonlar";
@@ -44,8 +45,9 @@ function App() {
       {/* <Gotcha /> */}
       {/* <Typeof /> */}
       {/* <GenericsFundamentals /> */}
-      <Zod />
-      <FetchData />
+      {/* <Zod /> */}
+      {/* <FetchData /> */}
+      <Class />
     </>
   );
 }
