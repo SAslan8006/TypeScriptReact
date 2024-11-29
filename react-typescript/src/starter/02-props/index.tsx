@@ -1,7 +1,7 @@
 type PropsWithChildren = {
   name: string;
   id: number;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 // type ComponentProps = PropsWithChildren<{
