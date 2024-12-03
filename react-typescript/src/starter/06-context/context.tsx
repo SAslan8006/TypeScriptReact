@@ -30,7 +30,7 @@ export function ThemeProvider({
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
-
+  console.log(context);
   if (context === undefined)
     throw new Error("useTheme must be used within a ThemeProvider");
 
