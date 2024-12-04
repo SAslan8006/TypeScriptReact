@@ -6,7 +6,8 @@
 // import Contex from "./starter/06-context";
 // import Reducer from "./starter/07-reducers";
 // import FetchData from "./starter/08-fetch-data";
-import ReduxToolkit from "./starter/09-rtk";
+// import ReduxToolkit from "./starter/09-rtk";
+import Task from "./starter/10-tasks";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <Contex /> */}
       {/* <Reducer /> */}
       {/* <FetchData /> */}
-      <ReduxToolkit />
+      {/* <ReduxToolkit /> */}
+      <Task />
       {/* <h2>React & Typescript</h2> */}
     </main>
   );
