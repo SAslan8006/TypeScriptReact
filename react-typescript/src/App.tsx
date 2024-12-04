@@ -5,7 +5,8 @@
 // import Challenge from "./starter/05-challenge";
 // import Contex from "./starter/06-context";
 // import Reducer from "./starter/07-reducers";
-import FetchData from "./starter/08-fetch-data";
+// import FetchData from "./starter/08-fetch-data";
+import ReduxToolkit from "./starter/09-rtk";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Challenge type="basic" name="ahmet" email="a@b.com" /> */}
       {/* <Contex /> */}
       {/* <Reducer /> */}
-      <FetchData />
+      {/* <FetchData /> */}
+      <ReduxToolkit />
       {/* <h2>React & Typescript</h2> */}
     </main>
   );

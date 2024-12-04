@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import { fetchTours } from "./types";
+import { useQuery } from "@tanstack/react-query";
 
 function Component() {
   const {
@@ -11,8 +11,9 @@ function Component() {
     queryKey: ["tours"],
     queryFn: fetchTours,
   });
-  if (isPending) return <div>Loading...</div>;
-  if (isError) return <div>Error : {error.message}</div>;
+
+  if (isPending) return <h2>Loading...</h2>;
+  if (isError) return <h2>Error : {error.message} </h2>;
   return (
     <div>
       <h2 className="mb-1">Tours </h2>
