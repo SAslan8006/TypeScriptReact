@@ -1,6 +1,5 @@
 import TodoItem from "./component/TodoItem";
 import { dummyData } from "./data/todos";
-import { Todo } from "./types/todo";
 
 function App() {
   return (
