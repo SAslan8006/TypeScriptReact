@@ -8,7 +8,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>(dummyData);
 
   function setTodoCompleted(id: number, completed: boolean): void {
-    setTodos((prevTodos) =>
+    setTodos((prevTodos: Todo[]) =>
       prevTodos.map((todo) => (todo.id === id ? { ...todo, completed } : todo))
     );
   }
