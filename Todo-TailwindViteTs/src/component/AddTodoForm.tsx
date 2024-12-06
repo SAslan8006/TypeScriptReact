@@ -7,11 +7,9 @@ interface AddTodoFormProps {
 export default function AddTodoForm({ onSubmit }: AddTodoFormProps) {
   const [input, setInput] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-
     if (!input.trim()) return;
-
     onSubmit(input);
     setInput("");
   }

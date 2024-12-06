@@ -12,7 +12,7 @@ export default function TodoList({
   onCompletedChange,
   onDelete,
 }: TodoListProps) {
-  const todosSorted = todos.sort((a, b) => {
+  const todosSorted: Todo[] = todos.sort((a, b) => {
     if (a.completed === b.completed) {
       return b.id - a.id;
     }
