@@ -7,7 +7,10 @@ import TodoSummary from "./component/TodoSummary";
 import useTodos from "./hooks/useTodos";
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>(dummyData);
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : dummyData;
+  });
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
