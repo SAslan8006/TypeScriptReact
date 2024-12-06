@@ -2,17 +2,18 @@ import { useState } from "react";
 import { dummyData } from "./data/todos";
 import AddTodoForm from "./component/AddTodoForm";
 import TodoList from "./component/TodoList";
+import { Todo } from "./types/todo";
 
 function App() {
-  const [todos, setTodos] = useState(dummyData);
+  const [todos, setTodos] = useState<Todo[]>(dummyData);
 
-  function setTodoCompleted(id: number, completed: boolean) {
+  function setTodoCompleted(id: number, completed: boolean): void {
     setTodos((prevTodos) =>
       prevTodos.map((todo) => (todo.id === id ? { ...todo, completed } : todo))
     );
   }
 
-  function addTodo(title: string) {
+  function addTodo(title: string): void {
     setTodos((prevTodos) => [
       {
         id: prevTodos.length + 1,
@@ -23,7 +24,7 @@ function App() {
     ]);
   }
 
-  function deleteTodo(id: number) {
+  function deleteTodo(id: number): void {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   }
 
