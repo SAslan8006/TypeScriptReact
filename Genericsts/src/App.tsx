@@ -1,4 +1,4 @@
-import { useState } from "react";
+import Generic from "./Generic";
 
 function App() {
   return (
