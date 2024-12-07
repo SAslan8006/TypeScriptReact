@@ -74,3 +74,38 @@ const response2: ApiResponse12<{ name: string }> = {
 };
 
 console.log(response2);
+type User23 = {
+  id: number;
+  name: string;
+};
+
+type Employee = User23 & { email: string };
+
+const people: (User | Employee)[] = [
+  { id: 1, name: "John" }, // Sadece User
+  { id: 2, name: "Jane", email: "eOz0W@example.com" }, // Employee
+  { id: 3, name: "Bob", email: "2QK3y@example.com" }, // Employee
+];
+
+// Tür kontrolü ile `email` özelliğini kontrol ediyoruz.
+people.forEach((person) => {
+  if ("email" in person) {
+    console.log(`Employee Email: ${person.email}`);
+  } else {
+    console.log(`User Name: ${person.name}`);
+  }
+});
+
+// `isEmployee` tür koruyucu fonksiyonu
+function isEmployee(person: User | Employee): person is Employee {
+  return "email" in person;
+}
+
+// `isEmployee` kullanılarak yapılan kontrol
+people.forEach((person) => {
+  if (isEmployee(person)) {
+    console.log(`Employee Email (With Guard): ${person.email}`);
+  } else {
+    console.log(`User Name (With Guard): ${person.name}`);
+  }
+});
