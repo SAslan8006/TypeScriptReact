@@ -35,3 +35,5 @@ async function getUser(id: number) {
 }
 
 getUser(1);
+const user = catchError(getUser(1));
+console.log(user);
