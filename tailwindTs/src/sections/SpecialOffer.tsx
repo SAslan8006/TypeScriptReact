@@ -1,7 +1,7 @@
 import React from "react";
 
 const SpecialOffer = () => {
-  return <div>SpecialOffer</div>;
+  return <section className="padding">SpecialOffer</section>;
 };
 
 export default SpecialOffer;

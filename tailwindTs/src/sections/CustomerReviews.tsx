@@ -1,7 +1,7 @@
 import React from "react";
 
 const CustomerRevier = () => {
-  return <div>CustomerRevier</div>;
+  return <section className="bg-pale-blue padding">CustomerReviews</section>;
 };
 
 export default CustomerRevier;

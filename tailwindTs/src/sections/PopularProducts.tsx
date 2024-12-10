@@ -1,7 +1,7 @@
 import React from "react";
 
 const PopularProducts = () => {
-  return <div>PopularProducts</div>;
+  return <section className="padding">Popular Product</section>;
 };
 
 export default PopularProducts;
