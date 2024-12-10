@@ -1,4 +1,4 @@
-import Navbar from "./components/Nav";
+import Nav from "./components/Nav";
 import {
   PopularProducts,
   CustomerReviews,
@@ -13,7 +13,7 @@ import {
 const App = () => {
   return (
     <main className="relative">
-      <Navbar />
+      <Nav />
       <Hero />
       <PopularProducts />
       <SuperQuality />
