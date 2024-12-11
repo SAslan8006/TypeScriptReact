@@ -1,4 +1,4 @@
-import { statistic } from "./../../constants";
+import { statistic, shoes } from "./../../constants";
 
 export type Statistic = {
   value: string;
@@ -6,3 +6,10 @@ export type Statistic = {
 };
 
 export const statistic1: Statistic[] = statistic;
+
+export type Shoe = {
+  thumbnail: string;
+  bigShoe: string;
+};
+
+export const shoes1: Shoe[] = shoes;
