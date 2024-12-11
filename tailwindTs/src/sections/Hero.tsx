@@ -57,10 +57,9 @@ const Hero = () => {
           {shoes1.map((image, index) => (
             <div key={index}>
               <ShoeCard
-                index={index}
                 imgURL={image}
-                // changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
-                // bigShoeImg={bigShoeImg}
+                changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
+                bigShoeImg={bigShoeImg}
               />
             </div>
           ))}

@@ -13,3 +13,9 @@ export type Shoe = {
 };
 
 export const shoes1: Shoe[] = shoes;
+
+export type ShoeCardProps = {
+  imgURL: Shoe;
+  changeBigShoeImage: (url: string) => void;
+  bigShoeImg: string;
+};
