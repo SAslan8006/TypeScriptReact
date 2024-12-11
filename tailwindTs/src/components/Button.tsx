@@ -1,11 +1,5 @@
-type ButtonProps = {
-  label: string;
-  iconURL?: string; // Eğer URL ise tür string olmalı
-  backgroundColor?: string;
-  textColor?: string;
-  borderColor?: string;
-  fullWidth?: boolean;
-};
+import { ButtonProps } from "../assets/types/types";
+
 const Button: React.FC<ButtonProps> = ({
   label,
   iconURL,
@@ -13,7 +7,7 @@ const Button: React.FC<ButtonProps> = ({
   textColor = "text-white",
   borderColor = "border-coral-red",
   fullWidth = false,
-}) => {
+}): JSX.Element => {
   return (
     <button
       className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none

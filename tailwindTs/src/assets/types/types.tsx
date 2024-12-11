@@ -27,3 +27,12 @@ export type Product = {
 };
 
 export const product1: Product[] = products;
+
+export type ButtonProps = {
+  label: string;
+  iconURL?: string; // Eğer URL ise tür string olmalı
+  backgroundColor?: string;
+  textColor?: string;
+  borderColor?: string;
+  fullWidth?: boolean;
+};

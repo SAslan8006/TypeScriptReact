@@ -5,7 +5,7 @@ const ShoeCard = ({
   imgURL,
   changeBigShoeImage,
   bigShoeImg,
-}: ShoeCardProps) => {
+}: ShoeCardProps): JSX.Element => {
   const handleClick = () => {
     if (bigShoeImg !== imgURL.bigShoe) {
       changeBigShoeImage(imgURL.bigShoe);

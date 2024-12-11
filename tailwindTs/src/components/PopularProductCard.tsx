@@ -1,7 +1,7 @@
 import { star } from "../assets/icons";
 import { Product } from "../assets/types/types";
 
-const PopularProductCard = ({ imgURL, name, price }: Product) => {
+const PopularProductCard = ({ imgURL, name, price }: Product): JSX.Element => {
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full">
       <img src={imgURL} alt={name} className="w-[282px] h-[282px]" />
