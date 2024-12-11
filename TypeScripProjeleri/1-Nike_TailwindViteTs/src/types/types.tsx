@@ -1,4 +1,12 @@
-import { statistic, shoes, services, products, reviews } from "../constants";
+import {
+  statistic,
+  shoes,
+  services,
+  products,
+  reviews,
+  footerLinks,
+  socialMedia,
+} from "../constants";
 
 export type Statistic = {
   value: string;
@@ -55,3 +63,22 @@ export type Review = {
 export const reviews1: Review[] = reviews;
 
 export type ReviewCardProps = Review;
+
+export type link = {
+  name: string;
+  link: string;
+};
+
+export type footerLinks = {
+  title: string;
+  links: link[];
+};
+
+export const footerLinks1: footerLinks[] = footerLinks;
+
+export type socialMedias = {
+  src: string;
+  alt: string;
+};
+
+export const socialMedia1: socialMedias[] = socialMedia;
