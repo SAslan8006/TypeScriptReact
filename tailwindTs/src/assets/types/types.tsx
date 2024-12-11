@@ -1,4 +1,4 @@
-import { statistic, shoes } from "./../../constants";
+import { statistic, shoes, products } from "./../../constants";
 
 export type Statistic = {
   value: string;
@@ -19,3 +19,11 @@ export type ShoeCardProps = {
   changeBigShoeImage: (url: string) => void;
   bigShoeImg: string;
 };
+
+export type Product = {
+  imgURL: string;
+  name: string;
+  price: number;
+};
+
+export const product1: Product[] = products;
