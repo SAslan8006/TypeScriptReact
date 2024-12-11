@@ -1,5 +1,5 @@
 import { ServiceProps, services1 } from "../assets/types/types";
-import ServiceCard from "./../components/ServiceCard";
+import ServiceCard from "../components/ServiceCard";
 
 const Services = () => {
   return (
