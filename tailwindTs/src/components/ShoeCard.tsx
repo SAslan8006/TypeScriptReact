@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoeCardProps } from "../assets/types/types";
+import { ShoeCardProps } from "../types/types";
 
 const ShoeCard = ({
   imgURL,

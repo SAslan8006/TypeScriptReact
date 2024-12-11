@@ -1,4 +1,4 @@
-import { ServiceProps, services1 } from "../assets/types/types";
+import { ServiceProps, services1 } from "../types/types";
 import ServiceCard from "../components/ServiceCard";
 
 const Services = () => {

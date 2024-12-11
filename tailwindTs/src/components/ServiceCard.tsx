@@ -1,4 +1,4 @@
-import { ServiceProps } from "../assets/types/types";
+import { ServiceProps } from "../types/types";
 
 const ServiceCard = ({ imgURL, label, subtext }: ServiceProps): JSX.Element => {
   return (

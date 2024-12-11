@@ -1,4 +1,4 @@
-import { Product, product1 } from "../assets/types/types";
+import { Product, product1 } from "../types/types";
 import PopularProductCard from "../components/PopularProductCard";
 
 const PopularProducts = () => {

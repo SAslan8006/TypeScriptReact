@@ -1,4 +1,4 @@
-import { statistic, shoes, services, products } from "./../../constants";
+import { statistic, shoes, services, products } from "../constants";
 
 export type Statistic = {
   value: string;

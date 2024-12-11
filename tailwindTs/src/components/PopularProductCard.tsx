@@ -1,5 +1,5 @@
 import { star } from "../assets/icons";
-import { Product } from "../assets/types/types";
+import { Product } from "../types/types";
 
 const PopularProductCard = ({ imgURL, name, price }: Product): JSX.Element => {
   return (
