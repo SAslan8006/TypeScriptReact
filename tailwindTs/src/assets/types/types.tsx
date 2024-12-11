@@ -1,4 +1,4 @@
-import { statistic, shoes, products } from "./../../constants";
+import { statistic, shoes, services, products } from "./../../constants";
 
 export type Statistic = {
   value: string;
@@ -36,3 +36,11 @@ export type ButtonProps = {
   borderColor?: string;
   fullWidth?: boolean;
 };
+
+export type ServiceProps = {
+  imgURL: string;
+  label: string;
+  subtext: string;
+};
+
+export const services1: ServiceProps[] = services;
