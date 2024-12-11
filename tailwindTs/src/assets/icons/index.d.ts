@@ -13,7 +13,7 @@ declare module "../assets/icons" {
     export const youtube: string;
     export const linkedin: string;
     export const arrowUp: string;
-    export const arrowDown: string;
+    export const arrowRight: string;
     export const chevronUp: string;
     export const truckFast: string;
     export const copyrightSign: string;
