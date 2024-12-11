@@ -1,7 +1,7 @@
 import ReviewCard from "../components/ReviewCard";
 import { reviews1 } from "../types/types";
 
-const CustomerRevier = () => {
+const CustomerRevier = (): JSX.Element => {
   return (
     <section className="max-container">
       <h3 className="font-palanquin text-center text-4xl font-bold">

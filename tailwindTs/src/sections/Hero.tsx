@@ -4,7 +4,7 @@ import { shoes1, statistic1 } from "../types/types";
 import { bigShoe1 } from "../assets/images";
 import { useState } from "react";
 import ShoeCard from "../components/ShoeCard";
-const Hero = () => {
+const Hero = (): JSX.Element => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
   return (
     <section

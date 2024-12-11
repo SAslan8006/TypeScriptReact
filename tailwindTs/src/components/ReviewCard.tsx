@@ -6,7 +6,7 @@ const ReviewCard = ({
   customerName,
   rating,
   feedback,
-}: ReviewCardProps) => {
+}: ReviewCardProps): JSX.Element => {
   return (
     <div className="flex justify-center items-center flex-col">
       <img

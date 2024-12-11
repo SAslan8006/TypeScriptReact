@@ -1,7 +1,7 @@
 import { Product, product1 } from "../types/types";
 import PopularProductCard from "../components/PopularProductCard";
 
-const PopularProducts = () => {
+const PopularProducts = (): JSX.Element => {
   return (
     <section id="products" className="max-container max-sm:mt-12">
       <div className="flex flex-col justify-start gap-5">
