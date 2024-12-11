@@ -1,4 +1,3 @@
-import React from "react";
 import { Product, product1 } from "../assets/types/types";
 import PopularProductCard from "../components/PopularProductCard";
 
