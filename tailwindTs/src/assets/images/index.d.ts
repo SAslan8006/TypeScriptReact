@@ -1,22 +1,22 @@
 declare module "../assets/icons" {
-    export const arrowRight: string; // `arrowRight` için uygun türü belirtin.
-    export const bigShoe1: string;
-    export const bigShoe2: string;
-    export const bigShoe3: string;
-    export const customer1: string;
-    export const customer2: string;
-    export const footerLogo: string;
-    export const headerLogo: string;
-    export const offer: string;
-    export const shoe4: string;
-    export const shoe5: string;
-    export const shoe6: string;
-    export const shoe7: string;
-    export const shoe8: string;
-    export const thumbnailBackground: string;
-    export const thumbnailShoe1: string;
-    export const thumbnailShoe2: string;
-    export const thumbnailShoe3: string;
+    export const arrowRight: string|unknown; // `arrowRight` için uygun türü belirtin.
+    export const bigShoe1: string|unknown;
+    export const bigShoe2: string|unknown;
+    export const bigShoe3: string|unknown;
+    export const customer1: string|unknown;
+    export const customer2: string|unknown;
+    export const footerLogo: string|unknown;
+    export const headerLogo: string|unknown;
+    export const offer: string|unknown;
+    export const shoe4: string|unknown;
+    export const shoe5: string|unknown;
+    export const shoe6: string|unknown;
+    export const shoe7: string|unknown;
+    export const shoe8: string|unknown;
+    export const thumbnailBackground: string|    unknown;
+    export const thumbnailShoe1: string|unknown;
+    export const thumbnailShoe2: string|unknown;
+    export const thumbnailShoe3: string|unknown;
 }
 
 

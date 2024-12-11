@@ -1,4 +1,4 @@
-import { statistic, shoes, services, products } from "../constants";
+import { statistic, shoes, services, products, reviews } from "../constants";
 
 export type Statistic = {
   value: string;
@@ -44,3 +44,14 @@ export type ServiceProps = {
 };
 
 export const services1: ServiceProps[] = services;
+
+export type Review = {
+  imgURL: string;
+  customerName: string;
+  rating: number;
+  feedback: string;
+};
+
+export const reviews1: Review[] = reviews;
+
+export type ReviewCardProps = Review;

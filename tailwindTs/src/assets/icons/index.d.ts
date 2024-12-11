@@ -1,22 +1,22 @@
 declare module "../assets/icons" {
-    export const arrowRight: string; // `arrowRight` için uygun türü belirtin.
-    export const star: string;
-    export const menu: string;
-    export const close: string;
-    export const chevronRight: string;
-    export const chevronLeft: string;
-    export const facebook: string;
-    export const instagram: string;
-    export const hamburger: string;
-    export const twitter: string;
-    export const support: string;
-    export const youtube: string;
-    export const linkedin: string;
-    export const arrowUp: string;
-    export const arrowRight: string;
-    export const chevronUp: string;
-    export const truckFast: string;
-    export const copyrightSign: string;
-    export const shieldTick: string;
+    export const arrowRight: string|unknown; // `arrowRight` için uygun türü belirtin.
+    export const star: string|unknown;
+    export const menu: string|unknown;
+    export const close: string|unknown;
+    export const chevronRight: string|unknown;
+    export const chevronLeft: string|unknown;
+    export const facebook: string|unknown;
+    export const instagram: string|unknown;
+    export const hamburger: string|unknown;
+    export const twitter: string|unknown;
+    export const support: string|unknown;
+    export const youtube: string|unknown;
+    export const linkedin: string|unknown;
+    export const arrowUp: string|unknown;
+    export const arrowRight: string|unknown;
+    export const chevronUp: string|unknown;
+    export const truckFast: string|unknown;
+    export const copyrightSign: string|unknown;
+    export const shieldTick: string|unknown;
 }
 
