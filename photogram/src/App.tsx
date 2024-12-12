@@ -4,7 +4,7 @@ import router from "./routes";
 
 type Props = {};
 
-const App = (props: Props) => {
+const App: React.FC<Props> = (props: Props) => {
   return <RouterProvider router={router} />;
 };
 

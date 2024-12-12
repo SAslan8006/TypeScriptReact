@@ -6,27 +6,33 @@ import { Home } from "lucide-react";
 import CreatePost from "./pages/Post";
 import Profile from "./pages/profile";
 import MyPhotos from "./pages/myphotos";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 export const router = createBrowserRouter([
   {
-    path: "/home",
-    element: <Home />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/post",
-    element: <CreatePost />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/myphotos",
-    element: <MyPhotos />,
-    errorElement: <Error />,
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/post",
+        element: <CreatePost />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/myphotos",
+        element: <MyPhotos />,
+        errorElement: <Error />,
+      },
+    ],
   },
   {
     path: "/login",
