@@ -10,15 +10,14 @@ import {
 import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { useUserAuth } from "@/context/userAuthContext";
-import { UserSignIn } from "@/types";
-import { Label } from "@radix-ui/react-label";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import image1 from "@/assets/images/image1.jpg";
 import image2 from "@/assets/images/image2.jpg";
 import image3 from "@/assets/images/image3.jpg";
 import image4 from "@/assets/images/image4.jpg";
-type ISignUpProps = {};
+import { UserSignIn } from "@/types";
+import { Label } from "@radix-ui/react-label";
+import * as React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const initialValue: UserSignIn = {
   email: "",
@@ -26,38 +25,33 @@ const initialValue: UserSignIn = {
   confirmPassword: "",
 };
 
-const Signup: React.FC<ISignUpProps> = () => {
+interface ISignupProps {}
+
+const Signup: React.FunctionComponent<ISignupProps> = () => {
   const { googleSignIn, signUp } = useUserAuth();
   const navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState<UserSignIn>(initialValue);
-  const [error, setError] = useState<string | null>(null);
-
+  const [userInfo, setUserInfo] = React.useState<UserSignIn>(initialValue);
   const handleGoogleSignIn = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     try {
       await googleSignIn();
       navigate("/");
     } catch (error) {
-      console.error("Error during Google sign-in: ", error);
+      console.log("Error : ", error);
     }
   };
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (userInfo.password !== userInfo.confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
     try {
       await signUp({ email: userInfo.email, password: userInfo.password });
       navigate("/");
-    } catch (err) {
-      setError("An error occurred during sign-up.");
-      console.error(err);
+    } catch (error) {
+      console.log("Error : ", error);
     }
   };
   return (
     <div className="bg-slate-800 w-full h-screen">
-      <div className="container mx-auto p-6 h-full">
+      <div className="container mx-auto p-6 flex h-full">
         <div className="flex justify-center items-center w-full">
           <div className="p-6 w-2/3 hidden lg:block">
             <div className="grid grid-cols-2 gap-2">
@@ -80,7 +74,6 @@ const Signup: React.FC<ISignUpProps> = () => {
             </div>
           </div>
           <div className="max-w-sm rounded-xl border bg-card text-card-foreground shadow-sm">
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <Card>
               <form onSubmit={handleSubmit}>
                 <CardHeader className="space-y-1">
