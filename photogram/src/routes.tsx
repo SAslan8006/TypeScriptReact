@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "/singup",
+    path: "/signup",
     element: <Signup />,
     errorElement: <Error />,
   },

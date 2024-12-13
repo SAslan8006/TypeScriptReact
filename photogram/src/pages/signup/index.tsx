@@ -1,9 +1,141 @@
-import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Icons } from "@/components/ui/icons";
+import { Input } from "@/components/ui/input";
+import { useUserAuth } from "@/context/userAuthContext";
+import { UserSignIn } from "@/types";
+import { Label } from "@radix-ui/react-label";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 type ISignUpProps = {};
 
-const Signup: React.FC<ISignUpProps> = (props: ISignUpProps) => {
-  return <div>Signup</div>;
+const initialValue: UserSignIn = {
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const Signup: React.FC<ISignUpProps> = () => {
+  const { googleSignIn, signUp } = useUserAuth();
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState<UserSignIn>(initialValue);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleGoogleSignIn = async (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/");
+    } catch (error) {
+      console.error("Error during Google sign-in: ", error);
+    }
+  };
+  const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (userInfo.password !== userInfo.confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+    try {
+      await signUp({ email: userInfo.email, password: userInfo.password });
+      navigate("/");
+    } catch (err) {
+      setError("An error occurred during sign-up.");
+      console.error(err);
+    }
+  };
+  return (
+    <div className="h-screen w-full flex flex-col items-center justify-center">
+      <div className="max-w-sm rounded-xl border bg-card text-card-foreground shadow-sm">
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        <Card>
+          <form onSubmit={handleSubmit}>
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-2xl text-center mb-4">
+                PhotoGram
+              </CardTitle>
+              <CardDescription>
+                Enter your email below to create your account
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4">
+              <div className="grid">
+                <Button variant="outline" onClick={handleGoogleSignIn}>
+                  <Icons.google className="mr-2 h-4 w-4" />
+                  Google
+                </Button>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-background px-2 text-muted-foreground">
+                    Or
+                  </span>
+                </div>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="dipesh@example.com"
+                  value={userInfo.email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setUserInfo({ ...userInfo, email: e.target.value })
+                  }
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                  value={userInfo.password}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setUserInfo({ ...userInfo, password: e.target.value })
+                  }
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="confirmpassword">Confirm password</Label>
+                <Input
+                  id="confirmpassword"
+                  type="password"
+                  placeholder="Confirm password"
+                  value={userInfo.confirmPassword}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setUserInfo({
+                      ...userInfo,
+                      confirmPassword: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            </CardContent>
+            <CardFooter className="flex flex-col">
+              <Button className="w-full" type="submit">
+                Sign Up
+              </Button>
+              <p className="mt-3 text-sm text-center">
+                Already have an account ? <Link to="/login">Login</Link>
+              </p>
+            </CardFooter>
+          </form>
+        </Card>
+      </div>
+    </div>
+  );
 };
 
 export default Signup;
