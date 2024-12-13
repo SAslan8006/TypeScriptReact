@@ -1,12 +1,19 @@
-import { useUserAuth } from "@/context/userAuthContext";
-import React from "react";
+import * as React from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-type Props = {};
+interface IProtectedRoutesProps {}
 
-const ProtectedRoutes = (props: Props) => {
-  const { user } = useUserAuth();
+const ProtectedRoutes: React.FunctionComponent<IProtectedRoutesProps> = () => {
+  const auth = getAuth();
+  const [user, loading] = useAuthState(auth);
   const location = useLocation();
+
+  if (loading) {
+    return <div>...Loading</div>;
+  }
+
   return user ? (
     <Outlet />
   ) : (
