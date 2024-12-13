@@ -60,7 +60,7 @@ const Login = (props: Props) => {
                 PhotoGram
               </CardTitle>
               <CardDescription>
-                Enter your email below to create your account
+                Enter your email and password to log in
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -113,10 +113,10 @@ const Login = (props: Props) => {
             </CardContent>
             <CardFooter className="flex flex-col">
               <Button className="w-full" type="submit">
-                Sign Up
+                Login
               </Button>
               <p className="mt-3 text-sm text-center">
-                Already have an account ? <Link to="/login">Login</Link>
+                Don't have an account ? <Link to="/signup">Sign Up</Link>
               </p>
             </CardFooter>
           </form>
