@@ -1,9 +1,14 @@
+import Layout from "@/components/layout";
 import React from "react";
 
-type HomeProps = {};
+type IHomeProps = {};
 
-const Home: React.FC<HomeProps> = () => {
-  return <div>Home</div>;
+const Home: React.FC<IHomeProps> = (props) => {
+  return (
+    <Layout>
+      <div>Home</div>
+    </Layout>
+  );
 };
 
 export default Home;
