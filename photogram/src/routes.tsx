@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/login";
 import Error from "./pages/error";
 import Signup from "./pages/signup";
-import { Home } from "lucide-react";
 import CreatePost from "./pages/post";
 import Profile from "./pages/profile";
 import MyPhotos from "./pages/myphotos";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Home from "./pages/home/";
 
 export const router = createBrowserRouter([
   {
