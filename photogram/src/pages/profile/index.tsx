@@ -1,9 +1,14 @@
+import Layout from "@/components/layout";
 import React from "react";
 
 type Props = {};
 
 const Profile = (props: Props) => {
-  return <div>Profile</div>;
+  return (
+    <Layout>
+      <div>Profile</div>
+    </Layout>
+  );
 };
 
 export default Profile;

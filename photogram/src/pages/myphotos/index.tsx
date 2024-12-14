@@ -1,9 +1,13 @@
-import React from "react";
+import Layout from "@/components/layout";
 
 type Props = {};
 
 const MyPhotos = (props: Props) => {
-  return <div>MyPhotos</div>;
+  return (
+    <Layout>
+      <div>MyPhotos</div>
+    </Layout>
+  );
 };
 
 export default MyPhotos;
