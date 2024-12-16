@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <FileUploaderRegular
-        sourceList="local, url, camera, dropbox"
+        sourceList="local, gdrive, url, camera, dropbox"
         classNameUploader="uc-light"
         pubkey="685f50edc277b5811ba6"
       />
