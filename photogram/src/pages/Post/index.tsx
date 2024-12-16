@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import React from "react";
+import React, { useState } from "react";
 import { useUserAuth } from "@/context/userAuthContext";
 import { createPost } from "@/repository/post.service";
 import { FileEntry, PhotoMeta, Post } from "@/types";
@@ -14,10 +14,10 @@ type Props = {};
 const CreatePost = (props: Props) => {
   const navigate = useNavigate();
   const { user } = useUserAuth();
-  const [fileEntry, setFileEntry] = React.useState<FileEntry>({
+  const [fileEntry, setFileEntry] = useState<FileEntry>({
     files: [],
   });
-  const [post, setPost] = React.useState<Post>({
+  const [post, setPost] = useState<Post>({
     caption: "",
     photos: [],
     likes: 0,

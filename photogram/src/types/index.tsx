@@ -1,4 +1,4 @@
-import { OutputFileEntry } from "@uploadcare/blocks";
+import { OutputFileEntry } from "@uploadcare/react-uploader";
 
 export type UserLogIn = {
   email: string;
