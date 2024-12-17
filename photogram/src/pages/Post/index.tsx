@@ -11,12 +11,10 @@ import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-const CreatePost = (props: Props) => {
+const CreatePost: React.FC<Props> = () => {
   const navigate = useNavigate();
   const { user } = useUserAuth();
-  const [fileEntry, setFileEntry] = useState<FileEntry>({
-    files: [],
-  });
+  const [fileEntry, setFileEntry] = useState<FileEntry>({ files: [] });
   const [post, setPost] = useState<Post>({
     caption: "",
     photos: [],
@@ -26,26 +24,27 @@ const CreatePost = (props: Props) => {
     date: new Date(),
   });
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Uploaded File Entry : ", fileEntry.files);
-    console.log("The create post is : ", post);
-    const photoMeta: PhotoMeta[] = fileEntry.files.map((file) => {
-      return { cdnUrl: file.cdnUrl, uuid: file.uuid };
-    });
-    if (user != null) {
+    const photoMeta: PhotoMeta[] = fileEntry.files.map((file) => ({
+      cdnUrl: file.cdnUrl,
+      uuid: file.uuid,
+    }));
+
+    if (user) {
       const newPost: Post = {
         ...post,
         userId: user?.uid || null,
         photos: photoMeta,
       };
-      console.log("The final posy is  : ", newPost);
+      console.log("The final post is : ", newPost);
       await createPost(newPost);
       navigate("/");
     } else {
       navigate("/login");
     }
   };
+
   return (
     <Layout>
       <div className="flex justify-center">
@@ -64,7 +63,7 @@ const CreatePost = (props: Props) => {
                   id="caption"
                   placeholder="what's in your photo!"
                   value={post.caption}
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  onChange={(e) =>
                     setPost({ ...post, caption: e.target.value })
                   }
                 />
