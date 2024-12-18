@@ -1,7 +1,7 @@
 import { FileEntry } from "@/types";
 import "@uploadcare/react-uploader/core.css";
 import { useCallback } from "react";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import {
   FileUploaderRegular,
   UploadCtxProvider,
