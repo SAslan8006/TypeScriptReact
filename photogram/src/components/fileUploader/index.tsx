@@ -50,7 +50,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
 
   return (
     <div>
-      {/* Yükleme Bileşeni */}
+      {/* Yükleme Bileşeni ya*/}
       <FileUploaderRegular
         pubkey="685f50edc277b5811ba6"
         multiple
