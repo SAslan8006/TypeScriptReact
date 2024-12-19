@@ -45,7 +45,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
       })
       .catch((error) => console.error("File upload error:", error));
   };
-
+  console.log(fileEntry);
   return (
     <div>
       {/* Yükleme Bileşeni ya*/}
@@ -60,6 +60,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
       <div className="grid grid-cols-2 gap-4 mt-8">
         {fileEntry.files.map((file) => (
           <div key={file.uuid} className="relative">
+            <div className="absolute top-0 right-0">{file}</div>
             <img
               src={`${file.cdnUrl}/-/format/webp/-/quality/smart/-/stretch/fill/`}
               alt="Uploaded file"
