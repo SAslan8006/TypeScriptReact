@@ -29,8 +29,6 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
 
   // Dosya Yükleme İşlemi
   const handleFileUpload = (info: any) => {
-    console.log("Upload info: ", info);
-
     // info.files() ile dosya listesini al
     const filePromises = info.files ? info.files() : [];
 
