@@ -28,24 +28,35 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
   );
 
   // Dosya Yükleme İşlemi
-  const handleFileUpload = (info: any) => {
-    // info.files() ile dosya listesini al
-    const filePromises = info.files ? info.files() : [];
+  const handleFileUpload = async (info: any) => {
+    // Eğer `info` nesnesi farklı bir yapıdaysa doğru alanı belirleyin
+    const fileEntries = info.entries || info.allEntries || info.files || [];
+    if (!Array.isArray(fileEntries)) {
+      console.error("Dosya girişleri alınamadı:", fileEntries);
+      return;
+    }
 
-    // Tüm dosyaları bekle ve işleme
-    Promise.all(filePromises)
-      .then((files: any[]) => {
-        const newFiles = files.map((file) => ({
-          cdnUrl: file.cdnUrl,
-          uuid: file.uuid,
-        }));
-
-        const updatedFiles = [...fileEntry.files, ...newFiles];
-        onChange({ files: updatedFiles });
+    // Dosya bilgilerini işle
+    const validFiles = fileEntries
+      .map((entry: any) => {
+        if (entry.cdnUrl && entry.uuid) {
+          return { cdnUrl: entry.cdnUrl, uuid: entry.uuid };
+        }
+        console.warn("Eksik bilgiye sahip bir dosya:", entry);
+        return null;
       })
-      .catch((error) => console.error("File upload error:", error));
+      .filter(Boolean);
+
+    if (validFiles.length === 0) {
+      console.warn("Geçerli bir dosya bulunamadı.");
+      return;
+    }
+
+    // Dosyaları `onChange` ile bildir
+    const updatedFiles = [...fileEntry.files, ...validFiles];
+    onChange({ files: updatedFiles });
   };
-  console.log(fileEntry);
+
   return (
     <div>
       {/* Yükleme Bileşeni ya*/}
@@ -60,7 +71,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({
       <div className="grid grid-cols-2 gap-4 mt-8">
         {fileEntry.files.map((file) => (
           <div key={file.uuid} className="relative">
-            <div className="absolute top-0 right-0">{file}</div>
+            <div className="absolute top-0 right-0">{file.name}</div>
             <img
               src={`${file.cdnUrl}/-/format/webp/-/quality/smart/-/stretch/fill/`}
               alt="Uploaded file"

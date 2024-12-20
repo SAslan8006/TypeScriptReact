@@ -26,20 +26,28 @@ const CreatePost: React.FC<Props> = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Yüklenen dosyalardan fotoğraf meta bilgisi oluştur
     const photoMeta: PhotoMeta[] = fileEntry.files.map((file) => ({
       cdnUrl: file.cdnUrl,
       uuid: file.uuid,
     }));
-
+    console.log("photoMeta: ", photoMeta);
     if (user) {
       const newPost: Post = {
         ...post,
         userId: user?.uid || null,
-        photos: photoMeta,
+        photos: photoMeta, // Resim verilerini burada Firestore'a gönderiyoruz
       };
-      console.log("The final post is : ", newPost);
-      await createPost(newPost);
-      navigate("/");
+
+      console.log("The final post is: ", newPost);
+
+      try {
+        await createPost(newPost); // Firestore yükleme işlemi
+        navigate("/"); // Başarılı işlem sonrası yönlendirme
+      } catch (error) {
+        console.error("Post oluşturma sırasında bir hata oluştu:", error);
+      }
     } else {
       navigate("/login");
     }
